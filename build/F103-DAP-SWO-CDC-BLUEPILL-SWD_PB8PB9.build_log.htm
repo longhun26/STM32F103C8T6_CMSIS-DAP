@@ -1,0 +1,108 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.25.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: jkj tyb91, syxd, LIC=ATTQ1-C3BFV-45PT5-GIMXQ-YDSAK-EIKBJ
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.25.2.0
+Toolchain Path:  D:\Program Files\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.25.2.0
+Dialog DLL:      DARMSTM.DLL V1.68.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.29.0
+Dialog DLL:      TARMSTM.DLL V1.66.0.0
+ 
+<h2>Project:</h2>
+D:\STM32F103C8T6_CMSIS-DAP_SWO-master\STM32F103C8T6DAP.uvproj
+Project File Date:  10/21/2026
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Program Files\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'STM32F103-JLINK-OB-DAP'
+assembling startup_stm32f10x_md.s...
+compiling system_stm32f10x.c...
+User\system_stm32f10x.c(102): warning:  #1215-D: #warning directive: "Use STM32F103Cx (72 MHz)"
+  		#warning "Use STM32F103Cx (72 MHz)"
+User\system_stm32f10x.c: 1 warning, 0 errors
+compiling main.c...
+.\CMSIS-DAP\DAP_config.h(530): warning:  #1-D: last line of file ends without a newline
+  #endif /* __DAP_CONFIG_H__ */
+User\main.c(24): warning:  #1215-D: #warning directive: "BLUEPILL board: using SWD/TMS-PB9, SWC/TCK-PB8, TDO-PB7, nRESET-PB6, TDI-PB5"
+  #warning "BLUEPILL board: using SWD/TMS-PB9, SWC/TCK-PB8, TDO-PB7, nRESET-PB6, TDI-PB5"
+User\main.c(33): warning:  #1215-D: #warning directive: "SWD mode only, JTAG mode disabled."
+  #warning "SWD mode only, JTAG mode disabled."
+User\main.c: 3 warnings, 0 errors
+compiling DAP.c...
+CMSIS-DAP\DAP_config.h(530): warning:  #1-D: last line of file ends without a newline
+  #endif /* __DAP_CONFIG_H__ */
+CMSIS-DAP\DAP.c: 1 warning, 0 errors
+compiling JTAG_DP.c...
+CMSIS-DAP\DAP_config.h(530): warning:  #1-D: last line of file ends without a newline
+  #endif /* __DAP_CONFIG_H__ */
+CMSIS-DAP\JTAG_DP.c: 1 warning, 0 errors
+compiling SWO.c...
+CMSIS-DAP\DAP_config.h(530): warning:  #1-D: last line of file ends without a newline
+  #endif /* __DAP_CONFIG_H__ */
+CMSIS-DAP\SWO.c: 1 warning, 0 errors
+compiling SW_DP.c...
+CMSIS-DAP\DAP_config.h(530): warning:  #1-D: last line of file ends without a newline
+  #endif /* __DAP_CONFIG_H__ */
+CMSIS-DAP\SW_DP.c: 1 warning, 0 errors
+compiling misc.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_flash.c...
+compiling stm32f10x_rcc.c...
+compiling DMA_STM32F10x.c...
+compiling GPIO_STM32F10x.c...
+compiling usb_config.c...
+compiling USART_STM32F10x.c...
+Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c(731): warning:  #177-D: function "USARTx_GetVersion"  was declared but never referenced
+  static ARM_DRIVER_VERSION USARTx_GetVersion (void) {
+Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c(741): warning:  #177-D: function "USART_GetCapabilities"  was declared but never referenced
+  static ARM_USART_CAPABILITIES USART_GetCapabilities (const USART_RESOURCES *usart) {
+Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c(753): warning:  #177-D: function "USART_Initialize"  was declared but never referenced
+  static int32_t USART_Initialize (      ARM_USART_SignalEvent_t  cb_event,
+Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c(817): warning:  #177-D: function "USART_Uninitialize"  was declared but never referenced
+  static int32_t USART_Uninitialize (const USART_RESOURCES *usart) {
+Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c(842): warning:  #177-D: function "USART_PowerControl"  was declared but never referenced
+  static int32_t USART_PowerControl (      ARM_POWER_STATE  state,
+Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c(1177): warning:  #177-D: function "USART_Transfer"  was declared but never referenced
+  static int32_t USART_Transfer (const void             *data_out,
+Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c(1219): warning:  #177-D: function "USART_GetTxCount"  was declared but never referenced
+  static uint32_t USART_GetTxCount (const USART_RESOURCES *usart) {
+Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c(1237): warning:  #177-D: function "USART_GetRxCount"  was declared but never referenced
+  static uint32_t USART_GetRxCount (const USART_RESOURCES *usart) {
+Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c(1259): warning:  #177-D: function "USART_Control"  was declared but never referenced
+  static int32_t USART_Control (      uint32_t          control,
+Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c(1787): warning:  #177-D: function "USART_GetStatus"  was declared but never referenced
+  static ARM_USART_STATUS USART_GetStatus (const USART_RESOURCES *usart) {
+Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c(1813): warning:  #177-D: function "USART_SetModemControl"  was declared but never referenced
+  static int32_t USART_SetModemControl (      ARM_USART_MODEM_CONTROL  control,
+Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c(1853): warning:  #177-D: function "USART_GetModemStatus"  was declared but never referenced
+  static ARM_USART_MODEM_STATUS USART_GetModemStatus (const USART_RESOURCES *usart) {
+Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c: 12 warnings, 0 errors
+compiling usbd_user_cdc_acm.c...
+compiling usbd_STM32F103.c...
+.\CMSIS-DAP\DAP_config.h(530): warning:  #1-D: last line of file ends without a newline
+  #endif /* __DAP_CONFIG_H__ */
+USB\usbd_STM32F103.c: 1 warning, 0 errors
+compiling usbd_user_hid.c...
+.\CMSIS-DAP\DAP_config.h(530): warning:  #1-D: last line of file ends without a newline
+  #endif /* __DAP_CONFIG_H__ */
+USB\usbd_user_hid.c: 1 warning, 0 errors
+linking...
+Program Size: Code=12768 RO-data=656 RW-data=160 ZI-data=11488  
+FromELF: creating hex file...
+".\build\F103-DAP-SWO-CDC-BLUEPILL-SWD_PB8PB9.axf" - 0 Error(s), 22 Warning(s).
+Build Time Elapsed:  00:00:04
+</pre>
+</body>
+</html>

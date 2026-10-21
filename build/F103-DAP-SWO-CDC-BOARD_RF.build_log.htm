@@ -1,0 +1,104 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.25.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: jkj tyb91, syxd, LIC=ATTQ1-C3BFV-45PT5-GIMXQ-YDSAK-EIKBJ
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.25.2.0
+Toolchain Path:  D:\Program Files\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.25.2.0
+Dialog DLL:      DARMSTM.DLL V1.68.0.0
+Target DLL:      CMSIS_AGDI.dll V1.29.10.0
+Dialog DLL:      TARMSTM.DLL V1.66.0.0
+ 
+<h2>Project:</h2>
+D:\STM32F103C8T6_CMSIS-DAP_SWO-master\STM32F103C8T6DAP.uvproj
+Project File Date:  10/21/2026
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Program Files\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'STM32RF'
+assembling startup_stm32f10x_md.s...
+compiling main.c...
+User\main.c(10): error:  #5: cannot open source input file "RTL.h": No such file or directory
+  #include <RTL.h>
+User\main.c: 0 warnings, 1 error
+compiling system_stm32f10x.c...
+.\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h(478): error:  #5: cannot open source input file "core_cm3.h": No such file or directory
+  #include "core_cm3.h"
+User\system_stm32f10x.c: 0 warnings, 1 error
+compiling JTAG_DP.c...
+.\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h(478): error:  #5: cannot open source input file "core_cm3.h": No such file or directory
+  #include "core_cm3.h"
+CMSIS-DAP\JTAG_DP.c: 0 warnings, 1 error
+compiling SW_DP.c...
+.\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h(478): error:  #5: cannot open source input file "core_cm3.h": No such file or directory
+  #include "core_cm3.h"
+CMSIS-DAP\SW_DP.c: 0 warnings, 1 error
+compiling DAP.c...
+.\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h(478): error:  #5: cannot open source input file "core_cm3.h": No such file or directory
+  #include "core_cm3.h"
+CMSIS-DAP\DAP.c: 0 warnings, 1 error
+compiling SWO.c...
+.\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h(478): error:  #5: cannot open source input file "core_cm3.h": No such file or directory
+  #include "core_cm3.h"
+CMSIS-DAP\SWO.c: 0 warnings, 1 error
+compiling stm32f10x_flash.c...
+.\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h(478): error:  #5: cannot open source input file "core_cm3.h": No such file or directory
+  #include "core_cm3.h"
+Driver\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c: 0 warnings, 1 error
+compiling misc.c...
+.\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h(478): error:  #5: cannot open source input file "core_cm3.h": No such file or directory
+  #include "core_cm3.h"
+Driver\STM32F10x_StdPeriph_Driver\src\misc.c: 0 warnings, 1 error
+compiling stm32f10x_gpio.c...
+.\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h(478): error:  #5: cannot open source input file "core_cm3.h": No such file or directory
+  #include "core_cm3.h"
+Driver\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c: 0 warnings, 1 error
+compiling stm32f10x_rcc.c...
+.\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h(478): error:  #5: cannot open source input file "core_cm3.h": No such file or directory
+  #include "core_cm3.h"
+Driver\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c: 0 warnings, 1 error
+compiling DMA_STM32F10x.c...
+.\Driver\STM32F10x_StdPeriph_Driver\inc\STM32F10x.h(478): error:  #5: cannot open source input file "core_cm3.h": No such file or directory
+  #include "core_cm3.h"
+Driver\STM32F10x_ARM_Driver\DMA_STM32F10x.c: 0 warnings, 1 error
+compiling GPIO_STM32F10x.c...
+.\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h(478): error:  #5: cannot open source input file "core_cm3.h": No such file or directory
+  #include "core_cm3.h"
+Driver\STM32F10x_ARM_Driver\GPIO_STM32F10x.c: 0 warnings, 1 error
+compiling USART_STM32F10x.c...
+.\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h(478): error:  #5: cannot open source input file "core_cm3.h": No such file or directory
+  #include "core_cm3.h"
+Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c: 0 warnings, 1 error
+compiling usb_config.c...
+USB\usb_config.c(521): error:  #5: cannot open source input file "usb_lib.c": No such file or directory
+  		#include <usb_lib.c>
+USB\usb_config.c: 0 warnings, 1 error
+compiling usbd_STM32F103.c...
+USB\usbd_STM32F103.c(16): error:  #5: cannot open source input file "RTL.h": No such file or directory
+  #include <RTL.h>
+USB\usbd_STM32F103.c: 0 warnings, 1 error
+compiling usbd_user_hid.c...
+USB\usbd_user_hid.c(2): error:  #5: cannot open source input file "RTL.h": No such file or directory
+  #include <RTL.h>
+USB\usbd_user_hid.c: 0 warnings, 1 error
+compiling usbd_user_cdc_acm.c...
+USB\usbd_user_cdc_acm.c(60): error:  #5: cannot open source input file "RTL.h": No such file or directory
+  #include <RTL.h>
+USB\usbd_user_cdc_acm.c: 0 warnings, 1 error
+".\build\F103-DAP-SWO-CDC-BOARD_RF.axf" - 17 Error(s), 0 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
