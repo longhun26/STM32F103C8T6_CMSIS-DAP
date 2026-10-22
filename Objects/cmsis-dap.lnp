@@ -1,0 +1,24 @@
+--cpu Cortex-M3
+".\objects\dap.o"
+".\objects\jtag_dp.o"
+".\objects\sw_dp.o"
+".\objects\swo.o"
+".\objects\misc.o"
+".\objects\stm32f10x_flash.o"
+".\objects\stm32f10x_rcc.o"
+".\objects\stm32f10x_gpio.o"
+".\objects\usb_config.o"
+".\objects\usbd_stm32f103.o"
+".\objects\usbd_user_cdc_acm.o"
+".\objects\usbd_user_hid.o"
+"D:\Program Files\Keil_v5\ARM\RV31\LIB\USB_CM3.lib"
+".\objects\main.o"
+".\objects\system_stm32f10x.o"
+".\objects\startup_stm32f10x_md.o"
+".\objects\dma_stm32f10x.o"
+".\objects\gpio_stm32f10x.o"
+".\objects\usart_stm32f10x.o"
+--strict --scatter ".\Objects\cmsis-dap.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\cmsis-dap.map" -o .\Objects\cmsis-dap.axf

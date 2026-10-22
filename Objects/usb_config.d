@@ -1,0 +1,26 @@
+.\objects\usb_config.o: USB\usb_config.c
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\RV31\INC\usb_lib.c
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\RV31\INC\RTL.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\RV31\INC\rl_usb.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usb.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usb_def.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usb_adc.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usb_cdc.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usb_hid.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usb_msc.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usbd_core.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usbd_core_adc.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usbd_core_cdc.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usbd_core_hid.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usbd_core_msc.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usbd_core_cls.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usbd_desc.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usbd_event.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usbd_adc.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usbd_cdc_acm.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usbd_hid.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usbd_msc.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usbd_cls.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usbd_hw.h
+.\objects\usb_config.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\..\..\RL\USB\INC\usbh.h

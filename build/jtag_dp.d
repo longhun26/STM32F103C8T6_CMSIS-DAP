@@ -3,19 +3,19 @@
 .\build\jtag_dp.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\build\jtag_dp.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\build\jtag_dp.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\build\jtag_dp.o: .\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h
+.\build\jtag_dp.o: .\stm32f103c8t6_dap\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h
 .\build\jtag_dp.o: D:\Program Files\Keil_v5\ARM\Pack\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm3.h
 .\build\jtag_dp.o: D:\Program Files\Keil_v5\ARM\Pack\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
 .\build\jtag_dp.o: D:\Program Files\Keil_v5\ARM\Pack\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
 .\build\jtag_dp.o: D:\Program Files\Keil_v5\ARM\Pack\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
-.\build\jtag_dp.o: .\Driver\STM32F10x_StdPeriph_Driver\inc\system_stm32f10x.h
+.\build\jtag_dp.o: .\stm32f103c8t6_dap\Driver\STM32F10x_StdPeriph_Driver\inc\system_stm32f10x.h
 .\build\jtag_dp.o: .\User\stm32f10x_conf.h
-.\build\jtag_dp.o: .\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dma.h
-.\build\jtag_dp.o: .\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h
-.\build\jtag_dp.o: .\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h
-.\build\jtag_dp.o: .\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h
-.\build\jtag_dp.o: .\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h
-.\build\jtag_dp.o: .\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h
-.\build\jtag_dp.o: .\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h
-.\build\jtag_dp.o: .\Driver\STM32F10x_StdPeriph_Driver\inc\misc.h
+.\build\jtag_dp.o: .\stm32f103c8t6_dap\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dma.h
+.\build\jtag_dp.o: .\stm32f103c8t6_dap\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h
+.\build\jtag_dp.o: .\stm32f103c8t6_dap\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h
+.\build\jtag_dp.o: .\stm32f103c8t6_dap\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x_flash.h
+.\build\jtag_dp.o: .\stm32f103c8t6_dap\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h
+.\build\jtag_dp.o: .\stm32f103c8t6_dap\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x_pwr.h
+.\build\jtag_dp.o: .\stm32f103c8t6_dap\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h
+.\build\jtag_dp.o: .\stm32f103c8t6_dap\Driver\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\build\jtag_dp.o: CMSIS-DAP\DAP.h
