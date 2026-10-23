@@ -1,13 +1,13 @@
 .\objects\usart_stm32f10x.o: Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c
 .\objects\usart_stm32f10x.o: Driver\STM32F10x_ARM_Driver\USART_STM32F10x.h
-.\objects\usart_stm32f10x.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\usart_stm32f10x.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-.\objects\usart_stm32f10x.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\usart_stm32f10x.o: D:\Program Files\keil\ARM\ARMC\Bin\..\include\stdint.h
+.\objects\usart_stm32f10x.o: D:\Program Files\keil\ARM\ARMC\Bin\..\include\stdbool.h
+.\objects\usart_stm32f10x.o: D:\Program Files\keil\ARM\ARMC\Bin\..\include\string.h
 .\objects\usart_stm32f10x.o: .\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x.h
-.\objects\usart_stm32f10x.o: C:\Keil_v5\ARM\PACK\.Download\CMSIS\5.3.0\CMSIS\Include\core_cm3.h
-.\objects\usart_stm32f10x.o: C:\Keil_v5\ARM\PACK\.Download\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
-.\objects\usart_stm32f10x.o: C:\Keil_v5\ARM\PACK\.Download\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
-.\objects\usart_stm32f10x.o: C:\Keil_v5\ARM\PACK\.Download\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
+.\objects\usart_stm32f10x.o: D:\Software\Arm\Packs\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm3.h
+.\objects\usart_stm32f10x.o: D:\Software\Arm\Packs\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
+.\objects\usart_stm32f10x.o: D:\Software\Arm\Packs\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
+.\objects\usart_stm32f10x.o: D:\Software\Arm\Packs\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
 .\objects\usart_stm32f10x.o: .\Driver\STM32F10x_StdPeriph_Driver\inc\system_stm32f10x.h
 .\objects\usart_stm32f10x.o: .\User\stm32f10x_conf.h
 .\objects\usart_stm32f10x.o: .\Driver\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dma.h
@@ -20,6 +20,6 @@
 .\objects\usart_stm32f10x.o: .\Driver\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\usart_stm32f10x.o: Driver\STM32F10x_ARM_Driver\GPIO_STM32F10x.h
 .\objects\usart_stm32f10x.o: Driver\STM32F10x_ARM_Driver\DMA_STM32F10x.h
-.\objects\usart_stm32f10x.o: C:\Keil_v5\ARM\PACK\.Download\CMSIS\5.3.0\CMSIS\Driver\Include\Driver_USART.h
-.\objects\usart_stm32f10x.o: C:\Keil_v5\ARM\PACK\.Download\CMSIS\5.3.0\CMSIS\Driver\Include\Driver_Common.h
-.\objects\usart_stm32f10x.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\usart_stm32f10x.o: D:\Software\Arm\Packs\ARM\CMSIS\5.3.0\CMSIS\Driver\Include\Driver_USART.h
+.\objects\usart_stm32f10x.o: D:\Software\Arm\Packs\ARM\CMSIS\5.3.0\CMSIS\Driver\Include\Driver_Common.h
+.\objects\usart_stm32f10x.o: D:\Program Files\keil\ARM\ARMC\Bin\..\include\stddef.h
