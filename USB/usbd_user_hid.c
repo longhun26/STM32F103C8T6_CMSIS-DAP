@@ -31,6 +31,19 @@ static          uint8_t  USB_Request [DAP_PACKET_COUNT][DAP_PACKET_SIZE];  // Re
 static          uint8_t  USB_Response[DAP_PACKET_COUNT][DAP_PACKET_SIZE];  // Response Buffer
 //!!! static          uint8_t  HID_Flash_Buffer[DAP_PACKET_SIZE];
 
+#if defined ( JLINK_OB )
+// Debug counters for diagnosing intermittent CMSIS-DAP HID communication.
+volatile uint32_t u32HidOutReportCount;
+volatile uint32_t u32HidCommandProcessCount;
+volatile uint32_t u32HidInputPollCount;
+volatile uint32_t u32HidInputReportCount;
+volatile uint32_t u32HidResponseTriggerCount;
+volatile uint32_t u32HidResponseTriggerOkCount;
+volatile uint32_t u32HidResponseTriggerFailCount;
+volatile uint8_t  u8HidLastRequest;
+volatile uint8_t  u8HidLastResponse;
+#endif
+
 // USB HID Callback: when system initializes
 void usbd_hid_init (void)
 {
@@ -55,9 +68,15 @@ int usbd_hid_get_report (U8 rtype, U8 rid, U8 *buf, U8 req)
 		case USBD_HID_REQ_PERIOD_UPDATE:
 			break;
 		case USBD_HID_REQ_EP_INT:
+			#if defined ( JLINK_OB )
+			u32HidInputPollCount++;
+			#endif
 			if ((USB_ResponseOut != USB_ResponseIn) || USB_ResponseFlag)
 			{
 				memcpy(buf, USB_Response[USB_ResponseOut], DAP_PACKET_SIZE);
+				#if defined ( JLINK_OB )
+				u32HidInputReportCount++;
+				#endif
 				USB_ResponseOut++;
 				if (USB_ResponseOut == DAP_PACKET_COUNT)
 					USB_ResponseOut = 0;
@@ -84,6 +103,10 @@ void usbd_hid_set_report (U8 rtype, U8 rid, U8 *buf, int len, U8 req)
 	case HID_REPORT_OUTPUT:
 		if (len == 0)
 			break;
+		#if defined ( JLINK_OB )
+		u32HidOutReportCount++;
+		u8HidLastRequest = buf[0];
+		#endif
 		if (buf[0] == ID_DAP_TransferAbort)
 		{
 			if (pUserAppDescriptor != NULL)
@@ -245,11 +268,18 @@ void HID_ProcessCommand(uint8_t *request, uint8_t *response)
 uint8_t usbd_hid_process (void)
 {
 	uint32_t n;
+	#if defined ( JLINK_OB )
+	BOOL triggerStatus;
+	#endif
 
 	// Process pending requests
 	if ((USB_RequestOut != USB_RequestIn) || USB_RequestFlag)
 	{
 		HID_ProcessCommand(USB_Request[USB_RequestOut], USB_Response[USB_ResponseIn]);
+		#if defined ( JLINK_OB )
+		u32HidCommandProcessCount++;
+		u8HidLastResponse = USB_Response[USB_ResponseIn][0];
+		#endif
 
 		// Update request index and flag
 		n = USB_RequestOut + 1;
@@ -263,7 +293,18 @@ uint8_t usbd_hid_process (void)
 		if (USB_ResponseIdle)
 		{	// Request that data is send back to host
 			USB_ResponseIdle = 0;
+			#if defined ( JLINK_OB )
+			triggerStatus = usbd_hid_get_report_trigger(0, USB_Response[USB_ResponseIn], DAP_PACKET_SIZE);
+			#else
 			usbd_hid_get_report_trigger(0, USB_Response[USB_ResponseIn], DAP_PACKET_SIZE);
+			#endif
+			#if defined ( JLINK_OB )
+			u32HidResponseTriggerCount++;
+			if (triggerStatus)
+				u32HidResponseTriggerOkCount++;
+			else
+				u32HidResponseTriggerFailCount++;
+			#endif
 		}
 		else
 		{	// Update response index and flag

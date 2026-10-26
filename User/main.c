@@ -48,6 +48,11 @@ extern void CDC_ACM_UART_to_USB(void);
 
 uint8_t u8SysTick_Counter = 3;
 uint8_t u8LedMode = 0;
+#if defined ( JLINK_OB )
+volatile uint32_t u32SysTick_Ticks = 0;
+volatile uint32_t u32UsbErrorCount = 0;
+volatile uint32_t u32LastUsbError = 0;
+#endif
 
 #define LED_FLASH_ON()    SysTick->CTRL |= SysTick_CTRL_ENABLE_Msk  //turn-on SysTick, LED in flashing mode.
 #define LED_FLASH_OFF()   SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk //turn-off SysTick
@@ -104,14 +109,23 @@ void LEDS_SETUP (void)
 
 void LedConnectedOut(uint16_t bit)
 {
+#if defined ( JLINK_OB )
+  // The shared JLINK_OB LED is reserved for the main-loop heartbeat.
+  (void)bit;
+#else
   LedRunningOff();
   u8LedMode &= ~0x01;
   
   LED_FLASH_ON();
+#endif
 }
 
 void LedRunningOut(uint16_t bit)
 {
+#if defined ( JLINK_OB )
+  // Do not let host LED status commands stop the heartbeat time base.
+  (void)bit;
+#else
   LedConnectedOn();
   u8LedMode |= 0x01;
   
@@ -125,6 +139,7 @@ void LedRunningOut(uint16_t bit)
     LED_FLASH_ON();
     LedRunningOff();
   }
+#endif
 }
 
 void SysTick_Init(void)
@@ -137,6 +152,10 @@ void SysTick_Init(void)
 
 void SysTick_Handler(void)
 {
+#if defined ( JLINK_OB )
+  // Keep a 200 ms time base; the JLINK_OB heartbeat is toggled in main().
+  u32SysTick_Ticks++;
+#else
   u8SysTick_Counter--;
 
   //Connected LED
@@ -166,6 +185,7 @@ void SysTick_Handler(void)
     else
     LedRunningOff();
   }
+#endif
 }
 
 CoreDescriptor_t * pCoreDescriptor;
@@ -197,6 +217,10 @@ UserAppDescriptor_t UserAppDescriptor = {
 //=============================================================================
 int main(void)
 {
+#if defined ( JLINK_OB )
+  uint32_t heartbeatTick;
+#endif
+
   SystemCoreClockUpdate();
   BoardInit();  
   SysTick_Init(); //for LED flash
@@ -221,6 +245,10 @@ int main(void)
   LED_FLASH_ON();
   
   Delayms(100);       // Wait for 100ms
+
+#if defined ( JLINK_OB )
+  heartbeatTick = u32SysTick_Ticks;
+#endif
   
 #if (USBD_CDC_ACM_ENABLE == 1)
   USBD_CDC_ACM_PortInitialize(); //initial CDC UART port
@@ -229,6 +257,16 @@ int main(void)
   //-------------------------------------
   while (1) //Main loop
   {
+#if defined ( JLINK_OB )
+    // JLINK_OB shares the connected/running LED on PB12. Toggle it from the
+    // main loop once per second so a stopped DAP loop also stops the heartbeat.
+    if ((uint32_t)(u32SysTick_Ticks - heartbeatTick) >= 5U)
+    {
+      heartbeatTick = u32SysTick_Ticks;
+      LedRunningToggle();
+    }
+#endif
+
     usbd_hid_process(); //DAP process
 
 #if (USBD_CDC_ACM_ENABLE == 1)
@@ -237,8 +275,6 @@ int main(void)
   }
 }
 //=======End of main===========================================================
-
-extern uint32_t __Vectors;
 
 void HardFault_Handler(void);
 void NMI_Handler(void)      __attribute((alias("HardFault_Handler")));
@@ -252,7 +288,7 @@ void PendSV_Handler(void)   __attribute((alias("HardFault_Handler")));
 void HardFault_Handler(void)
 {
   __disable_irq();
-  __set_MSP(__Vectors);
+  // Keep the exception stack intact while reporting the fault and resetting.
   LEDS_SETUP();
   {
     register int count;
@@ -474,8 +510,15 @@ void BoardInit(void)
   LEDS_SETUP();
 }
 
-void USBD_Error_Event(void)
+void USBD_Error_Event(U32 error)
 {
+#if defined ( JLINK_OB )
+  // USB ERR/PMAOVR are reported from the USB ISR. Record them for diagnosis;
+  // the ISR clears the corresponding flag after this callback returns.
+  u32LastUsbError = error;
+  u32UsbErrorCount++;
+#else
+  (void)error;
   LedConnectedOn();
   LedRunningOn();
 
@@ -483,6 +526,7 @@ void USBD_Error_Event(void)
   usbd_reset_core();
 
   HardFault_Handler();
+#endif
 }
 
 //-----Soft reset + Hard reset-------------------------------------------------

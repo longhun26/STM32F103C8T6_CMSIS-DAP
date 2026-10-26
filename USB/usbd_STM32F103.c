@@ -555,6 +555,12 @@ void USB_LP_CAN1_RX0_IRQHandler(void)
 		ISTR = ~ISTR_SOF;
 	}
 
+	if (istr & ISTR_ESOF)
+	{
+		/* Expected Start of Frame: clear the pending interrupt flag. */
+		ISTR = ~ISTR_ESOF;
+	}
+
 	if (istr & ISTR_PMAOVR)
 	{
 #ifdef __RTX
