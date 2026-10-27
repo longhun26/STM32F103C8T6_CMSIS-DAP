@@ -81,7 +81,7 @@ Define `JLINK_OB` in project options to enable this configuration.
 |---------|----------|----------------|----------|
 | SWD | ✅ | ✅ | ✅ |
 | JTAG | ✅ | ✅ | ❌ (SWD only) |
-| SWO | ✅ | ✅ | ✅ (PB7/PA10) |
+| SWO | ✅ | ✅ | ❌ (Not supported) |
 | nRESET | PB6 | PB14/PA15 | Software only |
 | LED | PC13 | PA9 | PB12 (shared) |
 | USB | PA11/PA12 | PA11/PA12 | PA11/PA12 |
