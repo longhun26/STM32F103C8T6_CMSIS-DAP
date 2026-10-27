@@ -22,7 +22,7 @@ My contribution:
 ### Hardware Features
 - **Target MCU**: STM32F103C8T6 (72MHz)
 - **Interface**: SWD only (JTAG disabled)
-- **SWO Support**: SWO via PB7 (configurable) or PA10
+- **SWO**: **Not supported** (no hardware TDO/SWO pin)
 - **Reset**: Software reset via NVIC_SystemReset() (no hardware nRESET pin)
 - **LED**: Single shared LED on PB12 (low active) for both Connected/Running status
 - **USB**: Full-speed device (USB_DP/PA12, USB_DM/PA11, USB_PULLUP/PA9)
@@ -34,7 +34,7 @@ My contribution:
 | SWDIO / TMS | GPIOA | PA7 | SWD Data |
 | SWCLK / TCK | GPIOA | PA5 | SWD Clock |
 | TDI | - | NC | Not used (SWD mode) |
-| TDO / SWO | GPIOB | PB7 | SWO output (configurable via `SWO_PB7` macro) |
+| TDO / SWO | - | NC | **Not supported (no hardware pin)** |
 | nRESET | - | NC | Software reset only (NVIC_SystemReset) |
 | USB_DP | GPIOA | PA12 | USB D+ (hardware fixed) |
 | USB_DM | GPIOA | PA11 | USB D- (hardware fixed) |
