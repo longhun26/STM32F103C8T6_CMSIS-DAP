@@ -147,13 +147,13 @@ void USBD_Reset (void)
 #ifdef __RTX
 			| ((USBD_RTX_DevTask	!= 0) ? CNTR_ERRM	: 0)
 			| ((USBD_RTX_DevTask	!= 0) ? CNTR_PMAOVRM : 0)
-			| ((USBD_RTX_DevTask	!= 0) ? CNTR_SOFM	: 0)
-			| ((USBD_RTX_DevTask	!= 0) ? CNTR_ESOFM	: 0);
+			| ((USBD_RTX_DevTask	!= 0) ? CNTR_SOFM	: 0);
+			/* ESOF interrupt disabled to prevent lockup */
 #else
 			| ((USBD_P_Error_Event != 0) ? CNTR_ERRM	: 0)
 			| ((USBD_P_Error_Event != 0) ? CNTR_PMAOVRM : 0)
-			| ((USBD_P_SOF_Event	!= 0) ? CNTR_SOFM	: 0)
-			| ((USBD_P_SOF_Event	!= 0) ? CNTR_ESOFM	: 0);
+			| ((USBD_P_SOF_Event	!= 0) ? CNTR_SOFM	: 0);
+			/* ESOF interrupt disabled to prevent lockup */
 #endif
 
 	FreeBufAddr = EP_BUF_ADDR;
@@ -553,12 +553,6 @@ void USB_LP_CAN1_RX0_IRQHandler(void)
 		}
 #endif
 		ISTR = ~ISTR_SOF;
-	}
-
-	if (istr & ISTR_ESOF)
-	{
-		/* Expected Start of Frame: clear the pending interrupt flag. */
-		ISTR = ~ISTR_ESOF;
 	}
 
 	if (istr & ISTR_PMAOVR)

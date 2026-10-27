@@ -3,35 +3,43 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.43.1.0
-Copyright (C) 2025 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: st longhun, dianli, LIC=PE7DL-02RH0-01FP1-CGE5F-LF28P-L1IZ4
+IDE-Version: ¦ÌVision V5.25.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: jkj tyb91, syxd, LIC=ATTQ1-C3BFV-45PT5-GIMXQ-YDSAK-EIKBJ
  
 Tool Versions:
-Toolchain:       MDK-ARM Plus  Version: 5.43.0.0
-Toolchain Path:  D:\Program Files\keil\ARM\ARMC\Bin
-C Compiler:      Armcc.exe V5.06 update 7 (build 960)
-Assembler:       Armasm.exe V5.06 update 7 (build 960)
-Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
-Library Manager: ArmAr.exe V5.06 update 7 (build 960)
-Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
-CPU DLL:         SARMCM3.DLL V5.43.0.0
-Dialog DLL:      DCM.DLL V1.17.5.0
-Target DLL:      Segger\JL2CM3.dll V2.99.45.0
-Dialog DLL:      TCM.DLL V1.56.6.0
+Toolchain:       MDK-ARM Plus  Version: 5.25.2.0
+Toolchain Path:  D:\Program Files\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.25.2.0
+Dialog DLL:      DCM.DLL V1.17.1.0
+Target DLL:      CMSIS_AGDI.dll V1.29.10.0
+Dialog DLL:      TCM.DLL V1.35.1.0
  
 <h2>Project:</h2>
-D:\Work\code\STM32F103C8T6_CMSIS-DAP_SWO\cmsis-dap.uvprojx
-Project File Date:  10/22/2026
+D:\STM32F103C8T6_CMSIS-DAP_SWO-master\cmsis-dap.uvprojx
+Project File Date:  10/27/2026
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Program Files\keil\ARM\ARMC\Bin'
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Program Files\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'STM32F103-JLINK-OB-DAP'
-assembling startup_stm32f10x_md.s...
-compiling usbd_user_cdc_acm.c...
-compiling usb_config.c...
-compiling misc.c...
+compiling JTAG_DP.c...
+compiling DAP.c...
 compiling SW_DP.c...
+compiling SWO.c...
+compiling misc.c...
+compiling stm32f10x_flash.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_gpio.c...
+compiling usbd_user_cdc_acm.c...
+compiling usbd_STM32F103.c...
+compiling usb_config.c...
+compiling usbd_user_hid.c...
+assembling startup_stm32f10x_md.s...
 compiling system_stm32f10x.c...
 User\system_stm32f10x.c(102): warning:  #1215-D: #warning directive: "Use STM32F103Cx (72 MHz)"
   		#warning "Use STM32F103Cx (72 MHz)"
@@ -42,14 +50,6 @@ User\main.c(24): warning:  #1215-D: #warning directive: "BLUEPILL board: using S
 User\main.c(33): warning:  #1215-D: #warning directive: "SWD mode only, JTAG mode disabled."
   #warning "SWD mode only, JTAG mode disabled."
 User\main.c: 2 warnings, 0 errors
-compiling JTAG_DP.c...
-compiling stm32f10x_gpio.c...
-compiling SWO.c...
-compiling stm32f10x_flash.c...
-compiling stm32f10x_rcc.c...
-compiling usbd_user_hid.c...
-compiling usbd_STM32F103.c...
-compiling DAP.c...
 compiling DMA_STM32F10x.c...
 compiling GPIO_STM32F10x.c...
 compiling USART_STM32F10x.c...
@@ -79,7 +79,7 @@ Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c(1853): warning:  #177-D: function 
   static ARM_USART_MODEM_STATUS USART_GetModemStatus (const USART_RESOURCES *usart) {
 Driver\STM32F10x_ARM_Driver\USART_STM32F10x.c: 12 warnings, 0 errors
 linking...
-Program Size: Code=12568 RO-data=656 RW-data=164 ZI-data=12612  
+Program Size: Code=12400 RO-data=656 RW-data=204 ZI-data=12612  
 FromELF: creating hex file...
 ".\Objects\cmsis-dap.axf" - 0 Error(s), 15 Warning(s).
 
@@ -87,14 +87,15 @@ FromELF: creating hex file...
 
 Package Vendor: Keil
                 https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
-                Keil::STM32F1xx_DFP@2.4.1
+                Keil.STM32F1xx_DFP.2.4.1
                 STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
-  D:/Software/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+  .\RTE\_STM32F103-JLINK-OB-DAP
+  C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.1\Device\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

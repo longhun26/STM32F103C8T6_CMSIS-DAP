@@ -1,4 +1,4 @@
-# STM32F103C8T6_CMSIS-DAP_SWO
+# STM32F103C8T6_CMSIS-DAP
 -----------------------------
 
 Based x893's code on: https://github.com/x893/CMSIS-DAP
